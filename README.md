@@ -1,15 +1,13 @@
 # digital_oscilloscope_basys3
 
 An FPGA-based **digital oscilloscope** implemented in **VHDL** for the **Digilent Basys 3 (Artix-7, xc7a35tcpg236-1)**.  
-It samples an analog signal using the on-chip **Xilinx XADC** (aux input channel, **default: VAUX6**) and renders a live waveform + UI on a **640×480 VGA** display.
-
-This repository is structured to be **GitHub-friendly**: it keeps *sources, constraints, and IP configuration* while ignoring Vivado build artifacts.
+It samples an analog signal using the on-chip **Xilinx XADC**, stores in the block RAMs and renders a live waveform + UI on a **640×480 VGA** display.
 
 ---
 
 ## Features
 
-- **XADC sampling** (aux input channel; default VAUX6)
+- **XADC sampling** (on channel VAUX6)
 - **On-chip sample buffer** stored in FPGA RAM (circular buffer, **1024 samples** by default)
 - **Trigger** on threshold crossing, with a timeout-based “force trigger” to avoid stalling
 - **Adjustable controls** via Basys 3 buttons:
